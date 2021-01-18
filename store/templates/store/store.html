@@ -1,5 +1,30 @@
  {% extends 'store/main.html' %} {% load static %} {% block content %}
 
-<h3>Store</h3>
+<div class="row">
+    <div class="col-lg-4">
+        <img src="{% static '/static/images/pic1.jpg'%}" class="thumbnail">
+        <div class="box-element product">
+            <h6><strong>Rose Water  & Ivy Cream </strong></h6>
+            <br>
+
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <img src="{% static '/static/images/pic2.jpg'%}" class="thumbnail">
+        <div class="box-element product">
+            <h6><strong>Rose Water  & Ivy Mist </strong></h6>
+            <br>
+
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <img src="{% static '/static/images/pic3.jpg'%}" class="thumbnail">
+        <div class="box-element product">
+            <h6><strong>Hello Beautiful Fine Fragrance </strong></h6>
+            <br>
+
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
