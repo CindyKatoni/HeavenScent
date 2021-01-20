@@ -15,14 +15,20 @@
                         <h5>Total<strong>Ksh.4600</strong></h5>
                     </th>
                     <th>
-                        <a class="btn btn-success" href="{% url 'checkout' %}"></a>
+                        <a style="float: right; margin: 5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
                     </th>
                 </tr>
             </table>
         </div>
         <br>
         <div class="box-element">
-
+            <div class="cart-row">
+                <div style="flex:2;"></div>
+                <div style="flex:2;">Item</div>
+                <div style="flex:1;">Price</div>
+                <div style="flex:1;">Quantity</div>
+                <div style="flex:1;">Total</div>
+            </div>
         </div>
     </div>
 </div>{% endblock content %}
