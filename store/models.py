@@ -14,6 +14,7 @@ class Customer(models.Model):
     def__str__(self):
         return self.name
 
+#Add cloudinary imagefield to the product model later on 
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()       
@@ -21,3 +22,17 @@ class Product(models.Model):
 
     def__str__(self):
         return self.name
+
+#Order object will have ManyToOne relationship with a customer aka ForeignKey. 
+# Order will be the summary of items ordered and a transaction id
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
+    date_ordered = models.DateTimeField(auto_now_add=True)
+    complete = models.BooleanField(default=False, null=True, blank=False)#Checks if customer wants to checkout or not
+    transaction_id = models.CharField(max_length=200, null=True)
+
+    def__str__(self):
+        return str(self.id)
+
+#OrderItem will have individual product items..
+        
