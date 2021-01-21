@@ -8,3 +8,4 @@ from .models import *
 admin.site.Register(Customer)
 admin.site.Register(Product)
 admin.site.Register(Order)
+admin.site.Register(OrderItem)
