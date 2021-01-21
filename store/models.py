@@ -11,7 +11,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
 
-    def__str__(self):
+    def __str__(self):
         return self.name
 
 #Add cloudinary imagefield to the product model later on 
@@ -20,7 +20,7 @@ class Product(models.Model):
     price = models.FloatField()       
     digital = models.BooleanField(default=False, null=True, blank=False) 
 
-    def__str__(self):
+    def __str__(self):
         return self.name
 
 #Order object will have ManyToOne relationship with a customer aka ForeignKey. 
@@ -31,7 +31,7 @@ class Order(models.Model):
     complete = models.BooleanField(default=False, null=True, blank=False)#Checks if customer wants to checkout or not
     transaction_id = models.CharField(max_length=200, null=True)
 
-    def__str__(self):
+    def __str__(self):
         return str(self.id)
 
 #OrderItem will have individual product items..
@@ -41,7 +41,7 @@ class OrderItem(models.Model):
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
-    def__str__(self):
+    def __str__(self):
         return str(self.id)
 
 class ShippingAddress(models.Model):
@@ -51,5 +51,5 @@ class ShippingAddress(models.Model):
     city = models.CharField(max_length=200, null=False)
     date_added = models.DateTimeField(auto_now_add=True)
 
-    def__str__(self):
+    def __str__(self):
         return self.address
