@@ -13,3 +13,11 @@ class Customer(models.Model):
 
     def__str__(self):
         return self.name
+
+class Product(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    price = models.FloatField()       
+    digital = models.BooleanField(default=False, null=True, blank=False) 
+
+    def__str__(self):
+        return self.name
