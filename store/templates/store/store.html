@@ -1,8 +1,9 @@
  {% extends 'store/main.html' %} {% load static %} {% block content %}
 
 <div class="row">
+    {% for product in products %}
     <div class="col-lg-4">
-        <img src="{% static 'images/pic1.jpg'%}" class="img-thumbnail">
+        <img class="thumbnail" src="{% static 'images/placeholder.png'%}" alt="">
         <div class="box-element product">
             <h6><strong>Rose Water  & Ivy Cream </strong></h6>
             <br>
@@ -13,7 +14,8 @@
 
         </div>
     </div>
-    <div class="col-lg-4">
+    {% endfor %}
+    <!-- <div class="col-lg-4">
         <img src="{% static 'images/pic2.jpg'%}" class="img-thumbnail">
         <div class="box-element product">
             <h6><strong>Rose Water  & Ivy Mist </strong></h6>
@@ -22,9 +24,9 @@
             <a class="btn btn-outline-success" href="#">View</a>
             <h4 style="display: inline-block; float: right"><strong>Ksh.1500</strong></h4>
         </div>
-    </div>
+    </div> -->
 
-    <div class="col-lg-4">
+    <!-- <div class="col-lg-4">
         <img src="{% static 'images/pic3.jpg'%}" class="thumbnail">
         <div class="box-element product">
             <h6><strong>Hello Beautiful Fine Fragrance </strong></h6>
@@ -33,7 +35,7 @@
             <a class="btn btn-outline-success" href="#">View</a>
             <h4 style="display: inline-block; float: right"><strong>Ksh.1500</strong></h4>
         </div>
-    </div>
+    </div> -->
 </div>
 
 {% endblock content %}
