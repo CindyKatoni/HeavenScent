@@ -24,6 +24,13 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url        
 #Order object will have ManyToOne relationship with a customer aka ForeignKey. 
 # Order will be the summary of items ordered and a transaction id
 class Order(models.Model):
