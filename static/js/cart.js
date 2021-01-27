@@ -11,7 +11,15 @@ for (var i = 0; i < updateBtns.length; i++) {
         if (user === "AnonymousUser") {
             console.log("Not logged in")
         } else {
-            console.log("User is logged in. Sending data...")
+            updateUserOrder(productId, action)
+                // console.log("User is logged in. Sending data...")
         }
     })
+}
+
+function updateUserOrder(productId, action) {
+    console.log("User is authenticated. Sending data...")
+
+    //Send the data using fetch api
+    var url = '/update_item/' //this is the url we want to send the data to
 }
