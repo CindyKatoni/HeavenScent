@@ -22,4 +22,14 @@ function updateUserOrder(productId, action) {
 
     //Send the data using fetch api
     var url = '/update_item/' //this is the url we want to send the data to
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 'productId': productId, 'action': action })
+    })
+
+
 }
