@@ -37,7 +37,9 @@
 
         <br>
         <div class="box-element hidden" id="payment-info">
-            <small>Pay With Mpesa</small>
+            <p>Pay with Mpesa</p>
+            <small>Send To: 0704460014</small>
+            <button id="make-payment">Confirm Payment</button>
         </div>
     </div>
 
@@ -83,7 +85,14 @@
         console.log('Form submitted')
         document.getElementById('form-button').classList.add("hidden")
         document.getElementById('payment-info').classList.remove("hidden")
-
     })
+
+    document.getElementById('make-payment').addEventListener('click', fucntion(e) {
+        submitFormData()
+    })
+
+    function submitFormData() {
+        console.log("Payment button Clicked..")
+    }
 </script>
 {% endblock content %}
