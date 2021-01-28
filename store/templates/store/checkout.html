@@ -75,9 +75,25 @@
 </div>
 <script type="text/javascript">
     var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total|floatformat|2}}'
+
+
     if (shipping == 'False') {
         document.getElementById('shipping-info').innerHTML = ''
     }
+    //If user is already logged in 
+    if (user != 'AnonymousUser') {
+        document.getElementById('user-info').innerHTML = ''
+    }
+
+
+    if (shipping == 'False' && user != 'AnonymousUser') {
+        //Hide the entire form if shipping is false and user is logged in
+        document.getElementById('form-wrapper').classList.add("hidden");
+        //Show payment if logged in user wants to buy item that doesnt require payment
+        document.getElementById('payment-info').classList.remove("hidden");
+    }
+
 
     var form = document.getElementById('form')
     form.addEventListener('submit', function(e) {
@@ -87,12 +103,36 @@
         document.getElementById('payment-info').classList.remove("hidden")
     })
 
-    document.getElementById('make-payment').addEventListener('click', fucntion(e) {
+    document.getElementById('make-payment').addEventListener('click', function(e) {
         submitFormData()
     })
 
     function submitFormData() {
-        console.log("Payment button Clicked..")
+        console.log('Payment button clicked')
+        var userFormData = {
+            'name': null,
+            'phone': null,
+            'email': null,
+            'total': total,
+        }
+        var shippingInfo = {
+            'address': null,
+            'city': null,
+        }
+
+        if (shipping != 'False') {
+            shippingInfo.address = form.address.value
+            shippingInfo.city = form.city.value
+        }
+        if (user == 'AnonymousUser') {
+            userFormData.name = form.name.value
+            userFormData.phone = form.phone.value
+            userFormData.email = form.email.value
+        }
+
+
+
+
     }
 </script>
 {% endblock content %}
