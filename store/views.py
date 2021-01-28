@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import JsonResponse
 import json
+import datetime
 from .models import *
 
 # Create your views here.
@@ -80,4 +81,6 @@ def updateItem(request):
     return JsonResponse('Item added successfully', safe=False)    
 
 def processOrder(request):
+    transaction_id = datetime.datetime.now().timestamp()
+    print('Data:', request.body)
     return JsonResponse("Payment submitted...", safe=False)    
