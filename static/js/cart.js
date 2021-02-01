@@ -9,7 +9,7 @@ for (var i = 0; i < updateBtns.length; i++) {
 
         console.log('USER:', user)
         if (user === "AnonymousUser") {
-            addCookieItem()
+            addCookieItem(productId, action)
         } else {
             updateUserOrder(productId, action)
                 // console.log("User is logged in. Sending data...")
@@ -23,9 +23,10 @@ function addCookieItem(productId, action) {
         if (cart[productId] == undefined) {
             cart[productId] = { 'quantity': 1 }
         } else {
-            cart[productId]['quantity'] + 1
+            cart[productId]['quantity'] += 1
         }
     }
+
     if (action == 'remove') {
         cart[productId]['quantity'] -= 1
 
@@ -34,11 +35,10 @@ function addCookieItem(productId, action) {
             delete cart[productId]
         }
     }
+    console.log('Cart:', cart)
+    document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+    location.reload()
 }
-
-
-
-
 
 
 function updateUserOrder(productId, action) {
