@@ -8,6 +8,10 @@ import datetime
 from .models import *
 
 # Create your views here.
+def home(request):
+    return render(request, 'store/home.html')
+
+    
 def store(request):
         if request.user.is_authenticated:
             customer = request.user.customer
