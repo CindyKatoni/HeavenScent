@@ -16,4 +16,7 @@ app:
 	#django-admin startapp <name>
 
 superuser:
-	./manage.py createsuperuser --username $(name)	
+	./manage.py createsuperuser --username $(name)
+
+shell:
+	./manage.py shell
