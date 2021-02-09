@@ -23,6 +23,7 @@ libpq=12.2=h20c2e04_0
 libstdcxx-ng=9.1.0=hdf63c60_0
 libtiff=4.1.0=h2733197_1
 lz4-c=1.9.3=h2531618_0
+mysqlclient=2.0.3=pypi_0
 ncurses=6.2=he6710b0_1
 olefile=0.46=py_0
 openssl=1.1.1i=h27cfd23_0
