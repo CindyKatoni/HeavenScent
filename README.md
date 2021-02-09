@@ -15,7 +15,14 @@
     export ALLOWED_HOSTS='*'
     export DEBUG=True
     export ENGINE='django.db.backends.sqlite3'
+    export SQL_ENGINE='django.db.backends.mysql'
+    export DB_HOST=''
+    export DB_NAME=''
+    export DB_PORT=
+    export DB_USER=''
+    export DB_PWD=''
     ```
+- [Contact me](boywilder99@gmail.com) for the missing values
 - If using another database other than SQLite, change the value of `ENGINE` accordingly.
 - **Ensure `.env` is included in the `.gitignore` file**
 - Create a superuser
