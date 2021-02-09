@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 from pathlib import Path
 import os
 import environ
-
+import  django_heroku
 
 root = environ.Path(__file__) - 3  # get root of the project
 env = environ.Env()
@@ -136,3 +136,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

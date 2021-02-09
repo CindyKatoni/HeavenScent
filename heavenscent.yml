@@ -42,5 +42,9 @@ dependencies:
   - zlib=1.2.11=h7b6447c_3
   - zstd=1.4.5=h9ceee32_0
   - pip:
+    - dj-database-url==0.5.0
     - django-environ==0.4.5
+    - django-heroku==0.3.1
+    - gunicorn==20.0.4
+    - whitenoise==5.2.0
 prefix: /home/stphn/anaconda3/envs/heavenscent
