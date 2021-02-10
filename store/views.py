@@ -59,8 +59,14 @@ def cart(request):
                     'name':product.name,
                     'price':product.price,
                     'imageURL':product.imageURL,
-                }
+                },
+                'quantity':cart[i]["quantity"],
+                'get_total':total
             }
+            items.append(item)
+            if product.digital == False:
+                order['shipping'] = True
+
 
     context = {'items': items, 'order': order, 'cartItems': cartItems}
     return render(request, 'store/cart.html', context)
